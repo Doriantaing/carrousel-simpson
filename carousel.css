@@ -1,0 +1,90 @@
+body {
+  background-image: url('simpson.jpg');
+  background-size: cover;
+}
+
+.carouselTitle {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Comic sans ms', serif;
+  margin-top: 50px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  border: 2px solid #000;
+  margin-left: 300px;
+  margin-right: 300px;
+  box-shadow: 5px 10px 10px 15px#000;
+}
+
+.pic {
+  display: none;
+  border: 2px solid #000;
+  border-radius: 2%;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.pic.is-active {
+  display: block;
+  animation: roadRunnerIn 2s;
+}
+
+.left {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.right {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.donut {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: 'Comic sans ms', serif;
+  margin: 0 40px 0 40px;
+}
+
+.go {
+  margin-top: 20px;
+}
+
+@keyframes roadRunnerIn {
+  0% {
+    transform: translateY(-300px) skewX(30deg) scaleX(1.3);
+  }
+  70% {
+    transform: translateY(20px) skewX(0deg) scaleX(.9);
+  }
+  100% {
+    transform: translateY(0px) skewX(0deg) scaleX(1);
+  }
+}
+
+.donutList {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.donutNav {
+  margin-top: 50px;
+  margin-left: 110px;
+}
+
+.donutList.is-red {
+  background-color: red;
+  border-radius: 50%;
+}

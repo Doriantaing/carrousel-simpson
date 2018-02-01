@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="reset.css">
+  <title>Carrousel</title>
+
+</head>
+
+<body>
+
+  <h1 class="carouselTitle">Carrousel Simpson</h1>
+  <div class="carousel">
+    <div class="donut">
+      <img src="donut.png" class="left">
+      <h3 class="go">Go left</h3>
+    </div>
+
+    <div class="carousel-wrap">
+      <img class="pic is-active" src="http://lorempicsum.com/simpsons/350/200/1" alt="" data-name='first'>
+      <img class="pic" src="http://lorempicsum.com/simpsons/350/200/2" alt="" data-name='second'>
+      <img class="pic" src="http://lorempicsum.com/simpsons/350/200/3" alt="" data-name='third'>
+      <img class="pic" src="http://lorempicsum.com/simpsons/350/200/4" alt="" data-name='fourth'>
+
+      <div class="donutNav">
+        <img src="donut.png" class="donutList is-red" data-name='first'>
+        <img src="donut.png" class="donutList" data-name='second'>
+        <img src="donut.png" class="donutList" data-name='third'>
+        <img src="donut.png" class="donutList" data-name='fourth'>
+      </div>
+    </div>
+
+    <div class="donut">
+      <img src="donut.png" class="right">
+      <h3 class="go">Go right</h3>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <script>
+    var btn_left = document.querySelector('.left');
+    var btn_right = document.querySelector('.right');
+    var img = document.querySelectorAll('.pic');
+    var active = document.querySelector('.is-active');
+    var donut = document.querySelectorAll('.donutList');
+    var counter = 0;
+
+    btn_left.addEventListener('click', function() {
+
+      donut[counter].classList.remove('is-red');
+      if (counter > 0) {
+        img[counter].classList.remove('is-active');
+        counter--;
+        img[counter].classList.add('is-active');
+        donut[counter].classList.add('is-red');
+      } else {
+        img[counter].classList.remove('is-active');
+        counter = 3;
+        img[counter].classList.add('is-active');
+        donut[counter].classList.add('is-red');
+
+
+      }
+
+
+
+
+    });
+
+
+    btn_right.addEventListener('click', function() {
+      donut[counter].classList.remove('is-red');
+
+      if (counter < img.length - 1) {
+        img[counter].classList.remove('is-active');
+        counter++;
+        img[counter].classList.add('is-active');
+        donut[counter].classList.add('is-red');
+
+
+      } else {
+        img[counter].classList.remove('is-active');
+        counter = 0;
+        img[counter].classList.add('is-active');
+        donut[counter].classList.add('is-red');
+
+
+      }
+
+    });
+  </script>
+</body>
+
+</html>
